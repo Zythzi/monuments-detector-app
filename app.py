@@ -2,8 +2,6 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 from datetime import datetime
-from scipy import ndimage
-
 # Page configuration
 st.set_page_config(
     page_title="🏛️ Monuments Detector",
