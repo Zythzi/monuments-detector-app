@@ -1,9 +1,5 @@
 import streamlit as st
-from PIL import Image, ImageDraw
-import numpy as np
-import tensorflow as tf
-import os
-from datetime import datetime
+from PIL import Image
 
 # Page configuration
 st.set_page_config(
@@ -25,9 +21,6 @@ h1 {
     text-align: center;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-h2 {
-    color: #e0e0e0;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -78,14 +71,12 @@ with col2:
     """)
 
 if uploaded_file is not None:
-    # Display uploaded image
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
     
     st.success("✅ Image uploaded successfully!")
-    st.info("🚀 Ready for detection. This is a demo application. Real model integration coming soon!")
+    st.info("🚀 Demo Application - Upload your monument images to see them detected!")
     
-    # Demo detection results
     st.subheader("🎯 Detection Results")
     col1, col2, col3 = st.columns(3)
     with col1:
